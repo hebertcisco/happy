@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/leaflet": "^1.5.19",
     "@types/react-leaflet": "^2.5.2",
+    "dotenv": "^8.2.0",
     "leaflet": "^1.7.1",
     "next": "9.5.5",
     "react": "16.13.1",
