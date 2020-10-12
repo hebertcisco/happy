@@ -16,7 +16,7 @@ export default class CustomApp extends App<AppProps> {
     return (
       <>
         <Head>
-          <title>Happy</title>
+          <title>Happy - Leve felicidade para o mundo</title>
 
           <link rel="canonical" href="https://happy.now.sh" />
           <meta property="og:image" content="static/img/logo.png" />
@@ -24,10 +24,13 @@ export default class CustomApp extends App<AppProps> {
           <link rel="icon" type="image/svg+xml" href="static/img/logo.png" />
 
           <meta property="og:locale" content="pt_BR" />
-          <meta property="og:title" content="Happy" />
+          <meta
+            property="og:title"
+            content="Happy - Leve felicidade para o mundo"
+          />
           <meta
             property="og:description"
-            content="Happy - Descubra felicidade de visitar um orfanato"
+            content="Happy - Visite orfanatos e mude o dia de muitas crianças."
           />
           <link rel="shortcut icon" href="favicon.ico" />
           <link rel="manifest" href="manifest.json" />
@@ -36,7 +39,7 @@ export default class CustomApp extends App<AppProps> {
           <meta name="theme-color" content="#29b6d1" />
           <meta
             name="description"
-            content="Happy - Descubra felicidade de visitar um orfanato"
+            content="Happy - Visite orfanatos e mude o dia de muitas crianças."
           />
 
           <meta name="keywords" content="Happy, orfanato, NLW" />
@@ -58,10 +61,10 @@ export default class CustomApp extends App<AppProps> {
           <meta content="Happy" property="og:title" />
           <meta content="https://happy.now.sh/" property="og:url" />
           <meta
-            content="Happy - Descubra felicidade de visitar um orfanato"
+            content="Happy - Visite orfanatos e mude o dia de muitas crianças."
             property="og:description"
           />
-          <meta content="@hebertbarros" name="twitter:site" />
+          <meta content="@hebertcisco" name="twitter:site" />
           <meta content="@hebertsoftware" name="twitter:creator" />
           <meta content="hebertbarros.now.sh" name="twitter:domain" />
 

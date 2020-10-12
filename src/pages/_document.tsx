@@ -31,7 +31,7 @@ export default class CustomDocument extends Document<DocumentProps> {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-153085951-1');
+        gtag('config', '${process.env.GOOGLE_TAG}');
       `,
     };
   }
@@ -41,13 +41,15 @@ export default class CustomDocument extends Document<DocumentProps> {
       <Html>
         <Head>
           {styleTags}
-          <script src="https://kit.fontawesome.com/1fb9726ed9.js"></script>
+          <script
+            src={`https://kit.fontawesome.com/${process.env.FONTAWELSOME}.js`}
+          ></script>
           <>
             <script
               async
-              src="https://www.googletagmanager.com/gtag/js?id=UA-153085951-1"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_TAG}`}
             />
-            {/* We call the function above to inject the contents of the script tag */}
+
             <script dangerouslySetInnerHTML={this.setGoogleTags()} />
           </>
         </Head>
