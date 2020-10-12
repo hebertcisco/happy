@@ -1,5 +1,10 @@
-<h1 align="center">Welcome to Happy 👋</h1>
-<img align="center" alt='happy' src='https://raw.githubusercontent.com/hebertcisco/happy/master/public/static/images/logo.svg'/>
+<h1 align="center">
+  <br>
+  <a href="https://github.com/hebertcisco/happy/"><img src="https://raw.githubusercontent.com/hebertcisco/happy/master/public/static/images/logo.svg" alt="Welcome to Happy 👋" width="200"></a>
+  <br>
+  Welcome to Happy 👋
+  <br>
+</h1>
 <p>
   
   <a href="web/LICENSE" target="_blank">
