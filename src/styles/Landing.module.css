@@ -9,13 +9,10 @@
 }
 #pageLanding .contentWrapper {
   position: relative;
-
   width: 100%;
   max-width: 1100px;
-
   height: 100%;
   max-height: 680px;
-
   display: flex;
   align-items: flex-start;
   flex-direction: column;
