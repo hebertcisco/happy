@@ -1,4 +1,5 @@
 <h1 align="center">Welcome to Happy 👋</h1>
+<img align="center" alt='happy' src='https://raw.githubusercontent.com/hebertcisco/happy/master/public/static/images/logo.svg'/>
 <p>
   
   <a href="web/LICENSE" target="_blank">
