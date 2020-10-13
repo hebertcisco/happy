@@ -52,6 +52,7 @@ export default {
     const images = requestImages.map((image) => {
       return { path: image.filename };
     });
+  
     const data = {
       name,
       latitude,
@@ -59,9 +60,10 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends,
-      images,
-    };
+      open_on_weekends: JSON.parse(open_on_weekends),
+      images
+  };
+    
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       latitude: Yup.number().required(),
