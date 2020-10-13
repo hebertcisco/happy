@@ -27,19 +27,31 @@
 ## Install
 
 ```sh
-yarn install
+yarn --cwd ./web install
 ```
 
 ## Usage
 
 ```sh
-yarn dev
+yarn --cwd ./web dev
 ```
 
 ## Run tests
 
 ```sh
-yarn test
+yarn --cwd ./web test
+```
+
+## Database migration
+
+```sh
+yarn --cwd ./backend migration:run
+```
+
+## Serve Backend
+
+```sh
+yarn --cwd ./backend dev
 ```
 
 ## Author
