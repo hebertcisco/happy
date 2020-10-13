@@ -45,7 +45,7 @@ yarn --cwd ./web test
 ## Install Backend
 
 ```sh
-yarn --cwd ./web install
+yarn --cwd ./backend install
 ```
 ## Database migration
 
