@@ -1,0 +1,169 @@
+#page-landing {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-landing .wrapper-logo-happy {
+  position: absolute;
+  z-index: 10;
+}
+
+#page-landing .content-wrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: 1100px;
+
+  height: 100%;
+  max-height: 680px;
+
+  margin-left: 35px;
+  margin-right: 35px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: url("../../images/landing.svg") no-repeat 80% center;
+  transition: background 0.2s;
+}
+
+#page-landing .content-wrapper img {
+  margin-top: 40px;
+}
+
+#page-landing .content-wrapper main {
+  max-width: 350px;
+}
+
+#page-landing .content-wrapper main h1 {
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 70px;
+}
+
+#page-landing .content-wrapper main p {
+  margin-top: 40px;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+.content-wrapper .location {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  font-size: 24px;
+  line-height: 34px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper .location strong {
+  font-weight: 800;
+}
+
+.content-wrapper .enter-app {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 80px;
+  height: 80px;
+  background: #ffd666;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.2s;
+}
+
+.content-wrapper .enter-app:hover {
+  background: #96feff;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 1050px) {
+  #page-landing .content-wrapper {
+    max-height: 750px;
+
+    background: url("../../images/landing-two-girls.svg") no-repeat 90% center;
+  }
+
+  #page-landing .content-wrapper img {
+    margin-top: 0;
+  }
+
+  #page-landing .content-wrapper main {
+    max-width: 450px;
+  }
+
+  #page-landing .content-wrapper main h1 {
+    font-size: 55px;
+  }
+
+  #page-landing .content-wrapper main p {
+    font-size: 26px;
+  }
+
+  .content-wrapper .location {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  #page-landing .content-wrapper {
+    max-height: 900px;
+
+    display: flex;
+    align-items: center;
+    background: url("../../images/landing-one-girl.svg") no-repeat center 30%;
+  }
+
+  #page-landing .content-wrapper img {
+    margin-top: 20px;
+    width: 150px;
+  }
+
+  #page-landing .content-wrapper main {
+    max-width: 350px;
+    margin-top: 50vh;
+  }
+
+  #page-landing .content-wrapper main h1 {
+    font-size: 36px;
+    line-height: 35px;
+  }
+
+  #page-landing .content-wrapper main p {
+    margin-top: 5px;
+
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .content-wrapper .location {
+    position: relative;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .content-wrapper .enter-app {
+    margin-bottom: 25px;
+  }
+}

@@ -3,10 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  color: white;
+  color: #fff;
   background: #ebf2f5;
 }
+
 body,
 input,
 button,
