@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/hebertcisco/happy/"><img src="https://raw.githubusercontent.com/hebertcisco/happy/master/web/public/static/images/logo.svg" alt="Welcome to Happy 👋" width="200"></a>
+  <a href="https://github.com/hebertcisco/happy/"><img src="https://raw.githubusercontent.com/hebertcisco/happy/master/web/src/images/logo.svg" alt="Welcome to Happy 👋" width="200"></a>
   
 </h1>
 <p>
