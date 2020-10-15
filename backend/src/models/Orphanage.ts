@@ -1,41 +1,35 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm'
+import Image from './Image'
 
-import Image from "./Image";
-
-@Entity("orphanages")
+@Entity('orphanages')
 export default class Orphanage {
-  @PrimaryGeneratedColumn("increment")
-  id: number;
+  @PrimaryGeneratedColumn('increment')
+  id: number
 
   @Column()
-  name: string;
+  name: string
 
   @Column()
-  latitude: number;
+  latitude: number
 
   @Column()
-  longitude: number;
+  longitude: number
 
   @Column()
-  about: string;
+  about: string
 
   @Column()
-  instructions: string;
+  instructions: string
+  
+  @Column()
+  opening_hours: string
 
   @Column()
-  opening_hours: string;
+  open_on_weekends: boolean
 
-  @Column()
-  open_on_weekends: boolean;
-  @OneToMany(() => Image, (image) => image.orphanage,{
-    cascade:['insert', 'update']
+  @OneToMany(() => Image, image => image.orphanage, {
+    cascade: ['insert', 'update']
   })
-  @JoinColumn({ name: "orphanage_id" })
-  images: Image[];
+  @JoinColumn({ name: 'orphanage_id' })
+  images: Image[]
 }

@@ -7,34 +7,28 @@ import { getRepository } from "typeorm";
 import orphanageView from "../views/orphanages_view";
 
 export default {
-  async index(response: Response) {
-    const orphanageRepository = getRepository(Orphanage);
+  async index(request: Request, response: Response) {
+    const orphanagesRepository = getRepository(Orphanage);
 
-    const orphanages = await orphanageRepository.find({
+    const orphanages = await orphanagesRepository.find({
       relations: ["images"],
     });
 
-    try {
-      return response.status(200).json(orphanageView.renderMany(orphanages));
-    } catch {
-      return response.status(400).json({ status: 400 });
-    }
+    return response.json(orphanageView.renderMany(orphanages));
   },
+
   async show(request: Request, response: Response) {
     const { id } = request.params;
 
-    const orphanageRepository = getRepository(Orphanage);
+    const orphanagesRepository = getRepository(Orphanage);
 
-    const orphanage = await orphanageRepository.findOneOrFail(id, {
+    const orphanage = await orphanagesRepository.findOneOrFail(id, {
       relations: ["images"],
     });
 
-    try {
-      return response.status(200).json(orphanageView.render(orphanage));
-    } catch {
-      return response.status(400).json({ status: 400 });
-    }
+    return response.json(orphanageView.render(orphanage));
   },
+
   async create(request: Request, response: Response) {
     const {
       name,
@@ -45,14 +39,14 @@ export default {
       opening_hours,
       open_on_weekends,
     } = request.body;
-    const orphanageRepository = getRepository(Orphanage);
+
+    const orphanagesRepository = getRepository(Orphanage);
 
     const requestImages = request.files as Express.Multer.File[];
-
     const images = requestImages.map((image) => {
       return { path: image.filename };
     });
-  
+
     const data = {
       name,
       latitude,
@@ -60,10 +54,10 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends: JSON.parse(open_on_weekends),
-      images
-  };
-    
+      open_on_weekends: open_on_weekends === "true",
+      images,
+    };
+
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       latitude: Yup.number().required(),
@@ -78,15 +72,15 @@ export default {
         })
       ),
     });
-    await schema.validate(data, { abortEarly: false });
-    
-    const orphanage = orphanageRepository.create(data);
 
-    try {
-      await orphanageRepository.save(orphanage);
-      return response.status(201).json({ created: true });
-    } catch {
-      return response.status(400).json({ created: false });
-    }
+    await schema.validate(data, {
+      abortEarly: false,
+    });
+
+    const orphanage = orphanagesRepository.create(data);
+
+    await orphanagesRepository.save(orphanage);
+
+    return response.status(201).json(orphanage);
   },
 };
