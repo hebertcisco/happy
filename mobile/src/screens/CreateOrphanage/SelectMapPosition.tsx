@@ -9,15 +9,15 @@ import { useNavigation } from "@react-navigation/native";
 export default function SelectMapPosition() {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
-  const handleMapPosition = (event: MapEvent) => {
-    setPosition(event.nativeEvent.coordinate);
-  };
+  
   const navigation = useNavigation();
 
   const handleNextStep = () => {
     navigation.navigate("OrphanageData", position);
   };
-
+  const handleMapPosition = (event: MapEvent) => {
+    setPosition(event.nativeEvent.coordinate);
+  };
   return (
     <View style={styles.container}>
       <MapView
