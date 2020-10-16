@@ -24,48 +24,48 @@
 
 ### ✨ [Demo](https://happygo.now.sh/)
 
-## Install
+## 🌐Install Web dependencies
 
 ```sh
 yarn --cwd ./web install
 ```
 
-## Usage
+## 🚀Usage
 
 ```sh
 yarn --cwd ./web dev
 ```
 
-## Run tests
+## 🧪Run tests
 
 ```sh
 yarn --cwd ./web test
 ```
 
-## Install Backend
+## 📃Install Backend dependencies
 
 ```sh
 yarn --cwd ./backend install
 ```
-## Database migration
+## 🗄️Database migration
 
 ```sh
 yarn --cwd ./backend migration:run
 ```
 
-## Serve Backend
+## 🚀Serve Backend
 
 ```sh
 yarn --cwd ./backend dev
 ```
 
-## Install Mobile 
+## 📲Install Mobile dependencies
 
 ```sh
 yarn --cwd ./mobile install
 ```
 
-## Start Mobile
+## 🚀Start Mobile
 
 ```sh
 yarn --cwd ./mobile start
