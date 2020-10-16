@@ -59,6 +59,18 @@ yarn --cwd ./backend migration:run
 yarn --cwd ./backend dev
 ```
 
+## Install Mobile 
+
+```sh
+yarn --cwd ./mobile install
+```
+
+## Start Mobile
+
+```sh
+yarn --cwd ./mobile start
+```
+
 ## Author
 
 👤 **Hebert F Barros**
