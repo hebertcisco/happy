@@ -59,7 +59,7 @@ export default function OrphanageData() {
       } as any);
     });
     await api.post("orphanages", data);
-    navigation.navigate("OrphanageMap");
+    navigation.navigate("OrphanagesMap");
   };
 
   const handleSelectImages = async () => {
