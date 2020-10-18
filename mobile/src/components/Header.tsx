@@ -1,37 +1,37 @@
-import { StyleSheet, Text, View } from "react-native";
-
-import { BorderlessButton } from "react-native-gesture-handler";
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { BorderlessButton } from 'react-native-gesture-handler';
 import { Feather } from "@expo/vector-icons";
-import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from '@react-navigation/native';
 
 interface HeaderProps {
   title: string;
   showCancel?: boolean;
 }
-const Header = ({ title, showCancel = true }: HeaderProps) => {
-  const navigation = useNavigation();
-  const handleGoBackToAppHomePage = () => {
-    navigation.navigate("OrphanagesMap");
-  };
 
+export default function Header({ title, showCancel = true }: HeaderProps) {
+  const navigation = useNavigation();
+
+  function handleGoBackHome() {
+    navigation.navigate("OrphanagesMap");
+  }
+  
   return (
     <View style={styles.container}>
       <BorderlessButton onPress={navigation.goBack}>
-        <Feather name="arrow-left" size={24} color="#15b6f6" />
+        <Feather name="arrow-left" size={24} color="#15b6d6" />
       </BorderlessButton>
       <Text style={styles.title}>{title}</Text>
 
-      {showCancel ? (
-        <BorderlessButton onPress={handleGoBackToAppHomePage}>
+      { showCancel ? (
+        <BorderlessButton onPress={handleGoBackHome}>
           <Feather name="x" size={24} color="#ff669d" />
         </BorderlessButton>
-      ) : (
-        <View></View>
-      )}
+      ): ( <View style={styles.empty}/> )}
     </View>
   );
-};
+}
+
 const styles = StyleSheet.create({
   container: {
     padding: 24,
@@ -41,12 +41,16 @@ const styles = StyleSheet.create({
     paddingTop: 44,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "center"
   },
+
   title: {
     fontFamily: "Nunito_600SemiBold",
     color: "#8fa7b3",
-    fontSize: 16,
+    fontSize: 16
   },
-});
-export default Header;
+
+  empty: {
+    width: 24
+  }
+})
