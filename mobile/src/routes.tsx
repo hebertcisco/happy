@@ -1,13 +1,15 @@
-import Header from "./components/Header";
-import { NavigationContainer } from "@react-navigation/native";
-import OrphanageData from "./screens/CreateOrphanage/OrphanageData";
-import OrphanageDetails from "./screens/OrphanageDetails";
-import OrphanagesMap from "./screens/OrphanagesMap";
 import React from "react";
-import SelectMapPosition from "./screens/CreateOrphanage/SelectMapPosition";
+import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const { Navigator, Screen } = createStackNavigator();
+
+import OrphanagesMap from "./pages/OrphanagesMap";
+import OrphanageDetails from "./pages/OrphanageDetails";
+import SelectMapPosition from "./pages/CreateOrphanges/SelectMapPosition";
+import OrphanageData from "./pages/CreateOrphanges/OrphanageData";
+
+import Header from "./components/Header";
 
 const Routes = () => {
   return (
@@ -19,10 +21,6 @@ const Routes = () => {
         }}
       >
         <Screen name="OrphanagesMap" component={OrphanagesMap} />
-        <Screen name="OrphanageData" component={OrphanageData}  options={{
-            headerShown: true,
-            header: () => <Header title="Informe os dados" />,
-          }}/>
         <Screen
           name="OrphanageDetails"
           component={OrphanageDetails}
@@ -31,12 +29,22 @@ const Routes = () => {
             header: () => <Header showCancel={false} title="Orfanato" />,
           }}
         />
-        <Screen  name="SelectMapPosition" 
-        component={SelectMapPosition}  
-        options={{
+        <Screen
+          name="SelectMapPosition"
+          component={SelectMapPosition}
+          options={{
             headerShown: true,
             header: () => <Header title="Selecione no mapa" />,
-          }} />
+          }}
+        />
+        <Screen
+          name="OrphanageData"
+          component={OrphanageData}
+          options={{
+            headerShown: true,
+            header: () => <Header title="Informe os dados" />,
+          }}
+        />
       </Navigator>
     </NavigationContainer>
   );
