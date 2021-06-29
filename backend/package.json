@@ -11,10 +11,11 @@
     "migration:revert": "yarn typeorm migration:revert "
   },
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   },
   "dependencies": {
     "@types/multer": "^1.4.4",
+    "@vercel/node": "^1.11.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
